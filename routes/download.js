@@ -18,9 +18,8 @@ router.get('/:a/:b', function(req, res, next) {
                         imageModel.findOne({name: req.params.a,
                                             password: req.params.b}, 
                                             function (err, doc){
-                                            res.send({data: doc.img.data})
+                                            res.render('image', { image: doc });
                                           });
-                          res.send({status: "ok"})
                             }
                             else{
                             //doesnt exist
