@@ -3,7 +3,7 @@
 The routes for the rest api are:
 * GET http<i></i>://localhost:3000/download/username/usernamepassword
 
-          resonse: An html file with the given img file
+          response: An html file with the given img file
           
 * POST http<i></i>://localhost:3000/upload
 
