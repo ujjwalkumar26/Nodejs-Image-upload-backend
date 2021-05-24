@@ -14,12 +14,13 @@ router.get('/:a/:b', function(req, res, next) {
                       else {
                             if(result==true){
                         //exits
+                        auth=true;
                         imageModel.findOne({name: req.params.a,
                                             password: req.params.b}, 
                                             function (err, doc){
                                             res.send({data: doc.img.data})
                                           });
-                                        //res.send({auth: "pass"})
+                          res.send({status: "ok"})
                             }
                             else{
                             //doesnt exist

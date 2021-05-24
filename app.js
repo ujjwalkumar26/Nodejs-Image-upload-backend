@@ -16,15 +16,17 @@ mongoose.connect(process.env.MONGO_URL,
   });
 
 
-var indexRouter = require('./routes/index');
-var imageRouter = require('./routes/images')
+var indexRouter = require('./routes/download');
+var imageRouter = require('./routes/upload');
+var updateRouter = require('./routes/update');
+var deleteRouter = require('./routes/delete');
 
 
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set("view engine", "ejs");
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -37,6 +39,8 @@ app.use(logger('dev'));
 app.use(fileUpload());
 app.use('/download/', indexRouter);
 app.use('/upload', imageRouter);
+app.use('/update',updateRouter);
+app.use('/delete/',deleteRouter);
 
 app.use(express.static('public'));
 
