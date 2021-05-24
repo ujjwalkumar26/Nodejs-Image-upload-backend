@@ -35,8 +35,8 @@ app.use(bodyParser.json());
 
 app.use(logger('dev'));
 app.use(fileUpload());
-app.use('/', indexRouter);
-app.use('/user', imageRouter);
+app.use('/download/', indexRouter);
+app.use('/upload', imageRouter);
 
 app.use(express.static('public'));
 
