@@ -23,7 +23,7 @@ router.get('/:a/:b', function(req, res, next) {
                             }
                             else{
                             //doesnt exist
-                            res.send({auth:failed})
+                            res.send({auth:"failed"})
                             }
                           }
   });
